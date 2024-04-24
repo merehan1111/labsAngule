@@ -1,0 +1,52 @@
+<h1>{{newProduct|json}}</h1>
+<form (submit)="addNewProduct()" #addprod="ngForm">
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Name:</label>
+      <input type="text" [(ngModel)]="newProduct.name"
+      name="name" 
+      #prdName="ngModel"
+      required
+      pattern="^[a-zA-Z]{3,15}$"
+      class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+      @if(prdName.invalid && prdName.touched){
+        <div class="text-danger">
+          @if(prdName.errors?.['required'])
+          {
+            <p>required</p>
+          }
+          @if(prdName.errors?.['pattern']){
+            <p>name must be more than 3 and less than 15</p>
+
+          }
+        
+       
+      </div>
+      }
+      
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Price:</label>
+      <input type="number" [(ngModel)]="newProduct.price" 
+      name="price" class="form-control" id="exampleInputPassword1">
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Quantity:</label>
+        <input type="number" [(ngModel)]="newProduct.quantity" 
+        name="quantity" class="form-control" id="exampleInputPassword1">
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">image</label>
+        <input type="file" [(ngModel)]="newProduct.imgUrl"
+        name="imgUrl" class="form-control" id="exampleInputPassword1">
+      </div>
+      <select class="form-select" aria-label="Default select example" [(ngModel)]="newProduct.catId" name="catId">
+        @for(cat of categry; track  cat.id)
+        {
+             <option value="cat.id">{{cat.name}}</option>
+        }
+         
+       </select>
+   
+    <button type="submit"  class="btn btn-primary m-2">Submit</button>
+  </form>
+  

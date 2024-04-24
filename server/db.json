@@ -1,0 +1,69 @@
+{
+  "products": [
+    {
+      "id": "100",
+      "name": "Dell labtop",
+      "price": 100000,
+      "quantity": 3,
+      "imgUrl": "https://fakeimg.pl/250x100/ff0000/",
+      "catId": 1
+    },
+    {
+      "id": "200",
+      "name": "HP labtop",
+      "price": 600000,
+      "quantity": 0,
+      "imgUrl": "https://fakeimg.pl/250x100/ff0000/",
+      "catId": 1
+    },
+    {
+      "id": "300",
+      "name": "Iphone",
+      "price": 300000,
+      "quantity": 1,
+      "imgUrl": "https://fakeimg.pl/250x100/ff0000/",
+      "catId": 2
+    },
+    {
+      "id": "400",
+      "name": "oppo",
+      "price": 700000,
+      "quantity": 2,
+      "imgUrl": "https://fakeimg.pl/250x100/ff0000/",
+      "catId": 2
+    },
+    {
+      "id": "500",
+      "name": "sumsung tablet",
+      "price": 800000,
+      "quantity": 0,
+      "imgUrl": "https://fakeimg.pl/250x100/ff0000/",
+      "catId": 3
+    },
+    {
+      "id": "600",
+      "name": "lenovo tablet",
+      "price": 50000,
+      "quantity": 4,
+      "imgUrl": "https://fakeimg.pl/250x100/ff0000/",
+      "catId": 3
+    },
+    {
+      "id": "693a"
+    }
+  ],
+  "category": [
+    {
+      "id": "1",
+      "name": "Laptop"
+    },
+    {
+      "id": "2",
+      "name": "Mobil"
+    },
+    {
+      "id": "3",
+      "name": "tablet"
+    }
+  ]
+}

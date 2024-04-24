@@ -1,0 +1,32 @@
+<!-- <h3>total order {{totalOrderPrice}}</h3> -->
+<!-- <h2>selected cat: {{selectedCatId}}</h2> -->
+<button (click)="change()">change category</button>
+<div class="row row-cols-1 row-cols-md-4 g-4">
+  <ng-container *ngFor="let product of filteredProduct; let i=index">
+    <!-- <div class="col" [class.d-none]="product.catId != selectedCatId"> -->
+   
+    <div class="col" >
+        <div class="card" >
+          <img [src]="product.imgUrl" class="card-img-top" alt="...">
+          <div class="card-body" appStyleProducts [bgColor]="'#f0f0f0'" [style.background-color]="(product.quantity == 0) ? 'green' : 'white'">
+            <h5 class="card-title">{{ i + 1 }}. {{ product.name }}</h5>
+            <p class="card-text">Price: {{ product.price |currency:'EUR' }}</p>
+            <p class="card-text">Quantity: {{ product.quantity }}</p>
+            
+            <input type="number" #countIn />
+            <button class="btn btn-success" (click)="buy(countIn.value,product.price)">Buy</button>
+            <button class="btn btn-success mx-5" (click)="navToDetails(product.id)">Details</button>
+            <button class="btn btn-danger m-3" (click)="deleProduct(product.id)" >DeleteProduct</button>
+            <form (submit)="UpdateProduct(product.id,updatedProductData)">
+              <button class="btn btn-primary" type="submit">UpdateProduct</button>
+            </form>
+          </div>
+        </div>
+    </div>
+  
+  </ng-container>
+
+</div>
+<h4>{{'29909011509345'|nationalId:'FullDate'}}</h4>
+<p>{{'0000000000000000'|criteCard}}</p>
+
